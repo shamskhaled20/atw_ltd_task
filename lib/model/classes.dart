@@ -13,9 +13,9 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json['id'],
-      name: json['name'],
-      address: json['address'],
+      id: json['id'] as int,
+      name: json['name'] as String,
+      address: json['address']['street'] as String,
     );
   }
 }
@@ -34,9 +34,9 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      id: json['id'],
-      userId: json['userId'],
-      title: json['title'],
+      id: json['id'] as int,
+      userId: json['userId'] as int,
+      title: json['title'] as String,
     );
   }
 }
@@ -55,9 +55,9 @@ class Photo {
 
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
-      id: json['id'],
-      albumId: json['albumId'],
-      imageUrl: json['imageUrl'],
+      id: json['id'] as int,
+      albumId: json['albumId'] as int,
+      imageUrl: json['url'] as String,
     );
   }
 }
